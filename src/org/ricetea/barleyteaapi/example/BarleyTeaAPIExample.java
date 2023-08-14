@@ -14,6 +14,7 @@ public final class BarleyTeaAPIExample extends JavaPlugin {
         logger.info("registering examples...");
         EntityRegister.getInstance().register(ExampleEntity.getInstance());
         ItemRegister.getInstance().register(ExampleItem.getInstance());
+        ItemRegister.getInstance().register(ExampleItem2.getInstance());
         logger.info("registering examples successful!");
     }
 
@@ -23,6 +24,7 @@ public final class BarleyTeaAPIExample extends JavaPlugin {
         logger.info("unregistering examples...");
         EntityRegister.getInstance().unregister(ExampleEntity.getInstance());
         ItemRegister.getInstance().unregister(ExampleItem.getInstance());
+        ItemRegister.getInstance().unregister(ExampleItem2.getInstance());
         logger.info("unregistering examples successful!");
     }
 }
