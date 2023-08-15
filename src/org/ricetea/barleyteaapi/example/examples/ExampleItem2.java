@@ -42,7 +42,7 @@ public final class ExampleItem2 extends RegularItem
     protected boolean handleItemGive(ItemStack itemStack) {
         setToolAttackDamage(itemStack, 15);
         setToolAttackSpeed(itemStack, 0.75);
-        setDefaultAttribute(itemStack, Attribute.GENERIC_MAX_HEALTH, 10, Operation.ADD_NUMBER, null);
+        setDefaultAttribute(itemStack, Attribute.GENERIC_MAX_HEALTH, 10, Operation.ADD_NUMBER, EquipmentSlot.OFF_HAND);
         setDefaultAttribute(itemStack, Attribute.GENERIC_MOVEMENT_SPEED, 0.05, Operation.ADD_SCALAR,
                 EquipmentSlot.HAND);
         return true;
