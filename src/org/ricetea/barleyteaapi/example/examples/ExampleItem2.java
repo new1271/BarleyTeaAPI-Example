@@ -3,11 +3,13 @@ package org.ricetea.barleyteaapi.example.examples;
 import javax.annotation.Nonnull;
 
 import org.bukkit.Material;
+import org.bukkit.attribute.Attribute;
+import org.bukkit.attribute.AttributeModifier.Operation;
+import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.ricetea.barleyteaapi.api.item.data.DataItemRarity;
 import org.ricetea.barleyteaapi.api.item.feature.FeatureItemCustomDurability;
 import org.ricetea.barleyteaapi.api.item.template.RegularItem;
-import org.ricetea.barleyteaapi.example.NamespacedKeyUtil;
 import org.ricetea.barleyteaapi.util.Lazy;
 
 public final class ExampleItem2 extends RegularItem
@@ -38,8 +40,11 @@ public final class ExampleItem2 extends RegularItem
 
     @Override
     protected boolean handleItemGive(ItemStack itemStack) {
-        setDefaultAttackDamage(itemStack, 15);
-        setDefaultAttackSpeed(itemStack, 0.75);
+        setToolAttackDamage(itemStack, 15);
+        setToolAttackSpeed(itemStack, 0.75);
+        setDefaultAttribute(itemStack, Attribute.GENERIC_MAX_HEALTH, 10, Operation.ADD_NUMBER, null);
+        setDefaultAttribute(itemStack, Attribute.GENERIC_MOVEMENT_SPEED, 0.05, Operation.ADD_SCALAR,
+                EquipmentSlot.HAND);
         return true;
     }
 }

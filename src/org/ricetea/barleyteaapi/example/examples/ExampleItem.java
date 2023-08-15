@@ -15,7 +15,6 @@ import org.ricetea.barleyteaapi.api.item.feature.data.DataItemHoldEntityDamagedB
 import org.ricetea.barleyteaapi.api.item.feature.data.DataItemHoldEntityKillEntity;
 import org.ricetea.barleyteaapi.api.item.feature.data.DataItemHoldEntityKillPlayer;
 import org.ricetea.barleyteaapi.api.item.template.RegularItem;
-import org.ricetea.barleyteaapi.example.NamespacedKeyUtil;
 import org.ricetea.barleyteaapi.util.Lazy;
 
 import net.kyori.adventure.text.Component;

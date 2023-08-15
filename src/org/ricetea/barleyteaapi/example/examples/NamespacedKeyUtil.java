@@ -1,10 +1,10 @@
-package org.ricetea.barleyteaapi.example;
+package org.ricetea.barleyteaapi.example.examples;
 
 import javax.annotation.Nonnull;
 
 import org.bukkit.NamespacedKey;
 
-public final class NamespacedKeyUtil {
+final class NamespacedKeyUtil {
     public static @Nonnull NamespacedKey BarleyTeaAPIExample(String key) {
         return new NamespacedKey("barleyteaapi_example", key);
     }

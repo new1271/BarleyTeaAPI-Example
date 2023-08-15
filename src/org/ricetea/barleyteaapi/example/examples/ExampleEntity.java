@@ -11,7 +11,6 @@ import org.ricetea.barleyteaapi.api.entity.feature.*;
 import org.ricetea.barleyteaapi.api.entity.feature.data.*;
 import org.ricetea.barleyteaapi.api.entity.helper.EntityHelper;
 import org.ricetea.barleyteaapi.api.entity.template.SpawnableEntity;
-import org.ricetea.barleyteaapi.example.NamespacedKeyUtil;
 import org.ricetea.barleyteaapi.util.Lazy;
 
 import net.kyori.adventure.text.Component;
