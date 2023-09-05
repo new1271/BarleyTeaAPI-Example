@@ -89,7 +89,7 @@ public final class ExampleItem extends RegularItem
     }
 
     @Override
-    protected boolean handleItemGive(ItemStack itemStack) {
+    protected boolean handleItemGive(@Nonnull ItemStack itemStack) {
         return true;
     }
 }
