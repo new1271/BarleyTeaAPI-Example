@@ -1,5 +1,7 @@
 package org.ricetea.barleyteaapi.example.examples;
 
+import java.util.List;
+
 import javax.annotation.Nonnull;
 
 import org.bukkit.Material;
@@ -7,10 +9,13 @@ import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier.Operation;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.ricetea.barleyteaapi.api.item.data.DataItemRarity;
 import org.ricetea.barleyteaapi.api.item.feature.FeatureItemCustomDurability;
 import org.ricetea.barleyteaapi.api.item.template.RegularItem;
 import org.ricetea.barleyteaapi.util.Lazy;
+
+import net.kyori.adventure.text.Component;
 
 public final class ExampleItem2 extends RegularItem
         implements FeatureItemCustomDurability {
@@ -45,6 +50,11 @@ public final class ExampleItem2 extends RegularItem
         setDefaultAttribute(itemStack, Attribute.GENERIC_MAX_HEALTH, 10, Operation.ADD_NUMBER, EquipmentSlot.OFF_HAND);
         setDefaultAttribute(itemStack, Attribute.GENERIC_MOVEMENT_SPEED, 0.05, Operation.ADD_SCALAR,
                 EquipmentSlot.HAND);
+        ItemMeta meta = itemStack.getItemMeta();
+        if (meta != null) {
+            meta.lore(List.of(Component.text("Hello World!")));
+            itemStack.setItemMeta(meta);
+        }
         return true;
     }
 }
