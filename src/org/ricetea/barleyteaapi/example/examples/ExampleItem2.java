@@ -12,15 +12,16 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.ricetea.barleyteaapi.api.item.data.DataItemRarity;
 import org.ricetea.barleyteaapi.api.item.feature.FeatureItemCustomDurability;
+import org.ricetea.barleyteaapi.api.item.helper.ItemHelper;
 import org.ricetea.barleyteaapi.api.item.template.RegularItem;
-import org.ricetea.barleyteaapi.util.Lazy;
+import org.ricetea.utils.Lazy;
 
 import net.kyori.adventure.text.Component;
 
 public final class ExampleItem2 extends RegularItem
         implements FeatureItemCustomDurability {
 
-    private static final Lazy<ExampleItem2> inst = new Lazy<>(ExampleItem2::new);
+    private static final Lazy<ExampleItem2> inst = Lazy.create(ExampleItem2::new);
 
     @Nonnull
     public static ExampleItem2 getInstance() {
@@ -45,10 +46,10 @@ public final class ExampleItem2 extends RegularItem
 
     @Override
     protected boolean handleItemGive(@Nonnull ItemStack itemStack) {
-        setToolAttackDamage(itemStack, 15);
-        setToolAttackSpeed(itemStack, 0.75);
-        setDefaultAttribute(itemStack, Attribute.GENERIC_MAX_HEALTH, 10, Operation.ADD_NUMBER, EquipmentSlot.OFF_HAND);
-        setDefaultAttribute(itemStack, Attribute.GENERIC_MOVEMENT_SPEED, 0.05, Operation.ADD_SCALAR,
+        ItemHelper.setToolAttackDamage(itemStack, 15);
+        ItemHelper.setToolAttackSpeed(itemStack, 0.75);
+        ItemHelper.setDefaultAttribute(itemStack, Attribute.GENERIC_MAX_HEALTH, 10, Operation.ADD_NUMBER, EquipmentSlot.OFF_HAND);
+        ItemHelper.setDefaultAttribute(itemStack, Attribute.GENERIC_MOVEMENT_SPEED, 0.05, Operation.ADD_SCALAR,
                 EquipmentSlot.HAND);
         ItemMeta meta = itemStack.getItemMeta();
         if (meta != null) {

@@ -13,10 +13,10 @@ import org.ricetea.barleyteaapi.api.entity.feature.data.DataEntityDamagedByEntit
 import org.ricetea.barleyteaapi.api.entity.feature.data.DataEntityDamagedByNothing;
 import org.ricetea.barleyteaapi.api.entity.helper.EntityHelper;
 import org.ricetea.barleyteaapi.api.entity.template.SpawnableEntity;
-import org.ricetea.barleyteaapi.util.Lazy;
+import org.ricetea.utils.Lazy;
 
 public class ExampleEntity2 extends SpawnableEntity implements FeatureEntityDamage {
-    private static final Lazy<ExampleEntity2> inst = new Lazy<>(ExampleEntity2::new);
+    private static final Lazy<ExampleEntity2> inst = Lazy.create(ExampleEntity2::new);
 
     @Nonnull
     public static ExampleEntity2 getInstance() {

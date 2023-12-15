@@ -11,7 +11,7 @@ import org.ricetea.barleyteaapi.api.entity.feature.*;
 import org.ricetea.barleyteaapi.api.entity.feature.data.*;
 import org.ricetea.barleyteaapi.api.entity.helper.EntityHelper;
 import org.ricetea.barleyteaapi.api.entity.template.SpawnableEntity;
-import org.ricetea.barleyteaapi.util.Lazy;
+import org.ricetea.utils.Lazy;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
@@ -20,7 +20,7 @@ import net.kyori.adventure.text.format.Style;
 public final class ExampleEntity extends SpawnableEntity // based on BarleyTeaAPI's Spawnable Entity Class
         implements FeatureEntityDamage, FeatureEntityDeath, FeatureKillEntity { // implements entity features
 
-    private static final Lazy<ExampleEntity> inst = new Lazy<>(ExampleEntity::new);
+    private static final Lazy<ExampleEntity> inst = Lazy.create(ExampleEntity::new);
 
     @Nonnull
     public static ExampleEntity getInstance() {

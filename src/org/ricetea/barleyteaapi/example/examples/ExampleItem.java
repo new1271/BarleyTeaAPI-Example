@@ -15,7 +15,7 @@ import org.ricetea.barleyteaapi.api.item.feature.data.DataItemHoldEntityDamagedB
 import org.ricetea.barleyteaapi.api.item.feature.data.DataItemHoldEntityKillEntity;
 import org.ricetea.barleyteaapi.api.item.feature.data.DataItemHoldEntityKillPlayer;
 import org.ricetea.barleyteaapi.api.item.template.RegularItem;
-import org.ricetea.barleyteaapi.util.Lazy;
+import org.ricetea.utils.Lazy;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
@@ -23,7 +23,7 @@ import net.kyori.adventure.text.format.NamedTextColor;
 public final class ExampleItem extends RegularItem
         implements FeatureItemHoldEntityDamage, FeatureItemHoldEntityKill, FeatureItemCustomDurability {
 
-    private static final Lazy<ExampleItem> inst = new Lazy<>(ExampleItem::new);
+    private static final Lazy<ExampleItem> inst = Lazy.create(ExampleItem::new);
 
     @Nonnull
     public static ExampleItem getInstance() {

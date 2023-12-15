@@ -12,11 +12,11 @@ public final class ExampleRecipes {
 
     public static void registerRecipes() {
         try {
-            DataItemType A = ExampleItem.getInstance().getType();
-            DataItemType B = ExampleItem2.getInstance().getType();
-            DataItemType C = DataItemType.create(Material.DIAMOND_BLOCK);
-            DataItemType D = DataItemType.create(Material.DIRT);
-            DataItemType E = DataItemType.create(Material.DIAMOND);
+            DataItemType A = DataItemType.get(ExampleItem.getInstance());
+            DataItemType B = DataItemType.get(ExampleItem2.getInstance());
+            DataItemType C = DataItemType.get(Material.DIAMOND_BLOCK);
+            DataItemType D = DataItemType.get(Material.DIRT);
+            DataItemType E = DataItemType.get(Material.DIAMOND);
             ShapedCraftingRecipe craftingRecipe = new ShapedCraftingRecipe(
                     NamespacedKeyUtil.BarleyTeaAPIExample("example_recipe"), new DataItemType[] {
                             A, A,
