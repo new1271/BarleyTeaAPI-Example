@@ -1,0 +1,8 @@
+name: BarleyTeaAPI-Example
+version: '${version}'
+main: org.ricetea.barleyteaapi.example.ExamplePlugin
+api-version: '1.20'
+depend: [BarleyTeaAPI]
+authors: [new1271 (RiceTeaInMC)]
+description: An example plugin for BarleyTeaAPI
+website: https://github.com/new1271/BarleyTeaAPI-Example
