@@ -11,6 +11,7 @@ import org.bukkit.inventory.EntityEquipment;
 import org.bukkit.inventory.ItemStack;
 import org.ricetea.barleyteaapi.api.entity.feature.FeatureEntityDeath;
 import org.ricetea.barleyteaapi.api.entity.feature.data.DataEntityDeath;
+import org.ricetea.barleyteaapi.api.entity.helper.EntityHelper;
 import org.ricetea.barleyteaapi.api.entity.template.SpawnableEntity;
 import org.ricetea.barleyteaapi.example.items.TankShield;
 import org.ricetea.barleyteaapi.example.utils.NamespacedKeyUtil;
@@ -54,14 +55,14 @@ public final class TankZombie extends SpawnableEntity implements FeatureEntityDe
             EntityEquipment equipment = livingEntity.getEquipment();
             if (equipment == null)
                 return false;
-            setAttribute(entity, Attribute.GENERIC_MAX_HEALTH, 100.0);
+            EntityHelper.setAttribute(entity, Attribute.GENERIC_MAX_HEALTH, 100.0);
             equipment.setItemInOffHand(TankShield.getInstance().handleItemGive(1), true);
             equipment.setHelmet(new ItemStack(Material.IRON_HELMET), true);
             equipment.setChestplate(new ItemStack(Material.IRON_CHESTPLATE), true);
             equipment.setLeggings(new ItemStack(Material.IRON_LEGGINGS), true);
             equipment.setBoots(new ItemStack(Material.IRON_BOOTS), true);
-            setEntityName(livingEntity);
-            setAsMaxHealth(livingEntity);
+            EntityHelper.setEntityName(this, livingEntity);
+            EntityHelper.setAsMaxHealth(livingEntity);
             return true;
         }
         return false;

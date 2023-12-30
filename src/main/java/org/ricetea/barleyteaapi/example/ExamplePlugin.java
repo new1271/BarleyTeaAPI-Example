@@ -3,7 +3,7 @@ package org.ricetea.barleyteaapi.example;
 import org.bukkit.Material;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.ricetea.barleyteaapi.api.entity.registration.EntityRegister;
-import org.ricetea.barleyteaapi.api.item.data.DataItemType;
+import org.ricetea.barleyteaapi.api.item.CustomItemType;
 import org.ricetea.barleyteaapi.api.item.recipe.ShapedCraftingRecipe;
 import org.ricetea.barleyteaapi.api.item.registration.CraftingRecipeRegister;
 import org.ricetea.barleyteaapi.api.item.registration.ItemRegister;
@@ -27,12 +27,12 @@ public final class ExamplePlugin extends JavaPlugin {
         // Register entity
         EntityRegister.getInstance().register(TankZombie.getInstance());
         // Register crafting recipe
-        DataItemType A = DataItemType.get(Material.SUGAR);
-        DataItemType B = DataItemType.get(Material.LEATHER_BOOTS);
-        DataItemType resultType = DataItemType.get(SpeedsterBoots.getInstance());
+        CustomItemType A = CustomItemType.get(Material.SUGAR);
+        CustomItemType B = CustomItemType.get(Material.LEATHER_BOOTS);
+        CustomItemType resultType = CustomItemType.get(SpeedsterBoots.getInstance());
         ShapedCraftingRecipe recipe = new ShapedCraftingRecipe(
                 NamespacedKeyUtil.Example("crafting_speedster_boots"),
-                new DataItemType[] {
+                new CustomItemType[]{
                         A, A, A,
                         A, B, A,
                         A, A, A

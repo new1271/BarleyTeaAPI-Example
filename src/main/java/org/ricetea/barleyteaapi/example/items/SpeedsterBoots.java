@@ -11,7 +11,7 @@ import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
-import org.ricetea.barleyteaapi.api.item.data.DataItemRarity;
+import org.ricetea.barleyteaapi.api.item.VanillaItemRarity;
 import org.ricetea.barleyteaapi.api.item.feature.FeatureItemTick;
 import org.ricetea.barleyteaapi.api.item.template.RegularItem;
 import org.ricetea.barleyteaapi.example.utils.NamespacedKeyUtil;
@@ -39,7 +39,7 @@ public final class SpeedsterBoots extends RegularItem implements FeatureItemTick
     private static final Lazy<SpeedsterBoots> _instLazy = Lazy.create(SpeedsterBoots::new);
 
     private SpeedsterBoots() {
-        super(NamespacedKeyUtil.Example("speedster_boots"), Material.LEATHER_BOOTS, DataItemRarity.UNCOMMON);
+        super(NamespacedKeyUtil.Example("speedster_boots"), Material.LEATHER_BOOTS, VanillaItemRarity.UNCOMMON);
     }
 
     @Nonnull

@@ -5,7 +5,7 @@ import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
-import org.ricetea.barleyteaapi.api.item.data.DataItemRarity;
+import org.ricetea.barleyteaapi.api.item.VanillaItemRarity;
 import org.ricetea.barleyteaapi.api.item.feature.FeatureItemAnvil;
 import org.ricetea.barleyteaapi.api.item.feature.FeatureItemCustomDurability;
 import org.ricetea.barleyteaapi.api.item.feature.FeatureItemEnchant;
@@ -37,7 +37,7 @@ public final class TankShield extends RegularItem implements FeatureItemAnvil, F
     private static final Lazy<TankShield> _instLazy = Lazy.create(TankShield::new);
 
     private TankShield() {
-        super(NamespacedKeyUtil.Example("tank_shield"), Material.SHIELD, DataItemRarity.EPIC);
+        super(NamespacedKeyUtil.Example("tank_shield"), Material.SHIELD, VanillaItemRarity.EPIC);
     }
 
     @Nonnull
