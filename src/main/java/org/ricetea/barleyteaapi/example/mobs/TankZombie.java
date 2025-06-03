@@ -15,7 +15,6 @@ import org.ricetea.barleyteaapi.api.entity.helper.EntityHelper;
 import org.ricetea.barleyteaapi.api.entity.template.SpawnableEntity;
 import org.ricetea.barleyteaapi.example.items.TankShield;
 import org.ricetea.barleyteaapi.example.utils.NamespacedKeyUtil;
-import org.ricetea.utils.Lazy;
 
 import javax.annotation.Nonnull;
 
@@ -32,7 +31,7 @@ import javax.annotation.Nonnull;
 
 public final class TankZombie extends SpawnableEntity implements FeatureEntityDeath {
 
-    private static final Lazy<TankZombie> _instLazy = Lazy.create(TankZombie::new);
+    private static final TankZombie _instance = new TankZombie();
 
     private TankZombie() {
         super(NamespacedKeyUtil.Example("tank_zombie"), EntityType.ZOMBIE);
@@ -40,7 +39,7 @@ public final class TankZombie extends SpawnableEntity implements FeatureEntityDe
 
     @Nonnull
     public static TankZombie getInstance(){
-        return _instLazy.get();
+        return _instance;
     }
 
     @Nonnull

@@ -15,7 +15,6 @@ import org.ricetea.barleyteaapi.api.item.VanillaItemRarity;
 import org.ricetea.barleyteaapi.api.item.feature.FeatureItemTick;
 import org.ricetea.barleyteaapi.api.item.template.RegularItem;
 import org.ricetea.barleyteaapi.example.utils.NamespacedKeyUtil;
-import org.ricetea.utils.Lazy;
 
 import javax.annotation.Nonnull;
 import java.util.List;
@@ -36,7 +35,8 @@ public final class SpeedsterBoots extends RegularItem implements FeatureItemTick
 
     private static final int POTION_DURATION_MINIMUM = 200; //10sec
     private static final int POTION_DURATION_MAXIMUM = 300; //15sec
-    private static final Lazy<SpeedsterBoots> _instLazy = Lazy.create(SpeedsterBoots::new);
+
+    private static final SpeedsterBoots _instance = new SpeedsterBoots();
 
     private SpeedsterBoots() {
         super(NamespacedKeyUtil.Example("speedster_boots"), Material.LEATHER_BOOTS, VanillaItemRarity.UNCOMMON);
@@ -44,7 +44,7 @@ public final class SpeedsterBoots extends RegularItem implements FeatureItemTick
 
     @Nonnull
     public static SpeedsterBoots getInstance() {
-        return _instLazy.get();
+        return _instance;
     }
 
     @Nonnull

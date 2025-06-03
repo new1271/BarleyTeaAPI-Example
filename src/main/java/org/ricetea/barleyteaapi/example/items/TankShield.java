@@ -16,7 +16,6 @@ import org.ricetea.barleyteaapi.api.item.feature.data.DataItemEnchant;
 import org.ricetea.barleyteaapi.api.item.helper.ItemHelper;
 import org.ricetea.barleyteaapi.api.item.template.RegularItem;
 import org.ricetea.barleyteaapi.example.utils.NamespacedKeyUtil;
-import org.ricetea.utils.Lazy;
 
 import javax.annotation.Nonnull;
 
@@ -34,7 +33,7 @@ import javax.annotation.Nonnull;
 
 public final class TankShield extends RegularItem implements FeatureItemAnvil, FeatureItemEnchant, FeatureItemCustomDurability {
 
-    private static final Lazy<TankShield> _instLazy = Lazy.create(TankShield::new);
+    private static final TankShield _instance = new TankShield();
 
     private TankShield() {
         super(NamespacedKeyUtil.Example("tank_shield"), Material.SHIELD, VanillaItemRarity.EPIC);
@@ -42,7 +41,7 @@ public final class TankShield extends RegularItem implements FeatureItemAnvil, F
 
     @Nonnull
     public static TankShield getInstance() {
-        return _instLazy.get();
+        return _instance;
     }
 
     @Nonnull
